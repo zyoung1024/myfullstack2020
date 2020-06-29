@@ -7,22 +7,53 @@
 /* 2. Declaration 声明,如 color: red */
 /* 3. Properties 属性 */
 /* 4. Property Value 属性值 */
-p {
-    color: red;
-    width: 500px;
-    border: 1px solid black;
+html {
+    font-size: 10px;
+
+    font-family: 'Open Sans', sans-serif;
+
+    background-color: #00539F;
+}
+
+
+body {
+    width: 600px;
+    /* 强制页面永远保持600像素宽*/
+    margin: 0 auto;
+    /*第一个值是上下,第二个值是左右*/
+    background-color: #FF9500;
+    padding: 0 20px 20px 20px;
+    border: 5px solid black;
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;
+    color: #00539F;
+    text-shadow: 3px 3px 1px black;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+p,
+li {
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
 }
 
 /* 多元素选择 */
-p, li, h1 {
-    color: red;
-}
 /* 不同类型的选择器 */
 /* 元素选择器 如 p */
 /* ID选择器 如 #my-id,具有特定ID 的元素,每个ID只对应一个元素 */
 /* 类选择器 .my-class */
 /* 属性选择器 选择拥有特定属性的元素 img[src] 选择<img src="myimage.png"> */
 /* 伪选择器 a:hover 在鼠标指针悬停在连接上选择<a> */
-a:hover{
-    color: antiquewhite;
+a:hover {
+    color: burlywood;
 }
