@@ -75,14 +75,12 @@ const Hello = (props) => {
   )
 }
 
-const Footer = () => {
-  return (
-    <div>
-      <a href="https://github.com/mluukkai">mluukkai</a>
+// 如果箭头函数主体只有单个表达式,可省略大括号和return
+const Footer = () =>
+  <div>
+    <a href="https://github.com/mluukkai">mluukkai</a>
       greeting app created by <a href="https://github.com/mluukkai">mluukkai</a>
-    </div>
-  )
-}
+  </div>
 
 // const App = () => {
 //   const name = 'Peter'
