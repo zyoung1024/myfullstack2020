@@ -1,58 +1,32 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
-// const App = (props) => {
-//   const [left, setLeft] = useState(0)
-//   const [right, setRight] = useState(0)
-
-//   return (
-//     <div>
-//       <div>
-//         {left}
-//         <button onClick={() => setLeft(left + 1)}>left</button>
-//         <button onClick={() => setRight(right + 1)}>right</button>
-//         {right}
-//       </div>
-//     </div>
-//   )
-// }
-
+// Handling arrays
 const App = (props) => {
-  const [clicks, setClicks] = useState({
-    left: 0, right: 0
-  })
+  const [left, setLeft] = useState(0)
+  const [right, setRight] = useState(0)
+  const [allClicks, setAll] = useState([])
 
-  // const handleLeftClick = () => {
-  //   const newClicks = {
-  //     left: clicks.left + 1,
-  //     right: clicks.right
-  //   }
-  //   setClicks(newClicks)
-  // }
-  const handleLeftClick = () =>
-    setClicks({ ...clicks, left: clicks.left + 1 })
-
-  const handleRightClick = () => {
-    const newClicks = {
-      left: clicks.left,
-      right: clicks.right + 1
-    }
-    setClicks(newClicks)
+  const handleLeftClick = () => {
+    // 向数组中添加新元素通过concat实现
+    // 该方法不改变现有数组,而是返回新数组的副本
+    setAll(allClicks.concat('L'))
+    setLeft(left + 1)
   }
-
-  // 违反了React中状态不可直接修改的原则
-  // const handleRightClick = () => {
-  //   clicks.right++
-  //   setClicks(clicks)
-  // }
+  const handleRightClick = () => {
+    setAll(allClicks.concat('R'))
+    // setAll(allClicks.push('R')) ERROR! React 组件的状态不能直接修改
+    setRight(right + 1)
+  }
 
   return (
     <div>
       <div>
-        {clicks.left}
+        {left}
         <button onClick={handleLeftClick}>left</button>
         <button onClick={handleRightClick}>right</button>
-        {clicks.right}
+        {right}
+        <p>{allClicks.join('')}</p>
       </div>
     </div>
   )
